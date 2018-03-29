@@ -16,9 +16,10 @@ class Nsolid < Formula
     #lib.install Dir["lib/*"]
     #share.install Dir["share/*"]
     #include.install Dir["include/*"]
-    ("/usr/local/lib/*").unlink
-    ("/usr/local/share/*").unlink
-    ("/usr/local/include/*").unlink
+
+    (lib/"node_modules/npm").unlink
+    #("/usr/local/share/*").unlink
+    #("/usr/local/include/*").unlink
     if build.without? "node"
       bin.install Dir["bin/nsolid"]
       bin.install Dir["bin/nsolid-cli"]
